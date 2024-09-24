@@ -3,21 +3,13 @@ project(Programming_Basics_with_C___09_2024)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# Add the main file
-add_executable(Programming_Basics_with_C___09_2024 main.cpp
-        01_first_steps_in_programming/lab/01.cpp
-        01_first_steps_in_programming/lab/02.cpp
-        01_first_steps_in_programming/lab/03.cpp
-        01_first_steps_in_programming/lab/04.cpp
-        01_first_steps_in_programming/lab/05.cpp
-        01_first_steps_in_programming/lab/06.cpp
-        01_first_steps_in_programming/lab/07.cpp
-        01_first_steps_in_programming/lab/08.cpp
-        01_first_steps_in_programming/lab/09.cpp
-)
-
-# Add all .cpp files from /01_first_steps_in_programming/lab
-file(GLOB LAB_FILES "01_first_steps_in_programming/lab/*.cpp")
-
-# Add these files to the executable
-target_sources(Programming_Basics_with_C___09_2024 PRIVATE ${LAB_FILES})
+# Create separate executables for each .cpp file
+add_executable(exe_01 01_first_steps_in_programming/lab/01.cpp)
+add_executable(exe_02 01_first_steps_in_programming/lab/02.cpp)
+add_executable(exe_03 01_first_steps_in_programming/lab/03.cpp)
+add_executable(exe_04 01_first_steps_in_programming/lab/04.cpp)
+add_executable(exe_05 01_first_steps_in_programming/lab/05.cpp)
+add_executable(exe_06 01_first_steps_in_programming/lab/06.cpp)
+add_executable(exe_07 01_first_steps_in_programming/lab/07.cpp)
+add_executable(exe_08 01_first_steps_in_programming/lab/08.cpp)
+add_executable(exe_09 01_first_steps_in_programming/lab/09.cpp)
