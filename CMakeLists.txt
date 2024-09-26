@@ -3,22 +3,18 @@ project(Programming_Basics_with_C___09_2024)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# Create separate executables for each .cpp file
-add_executable(exe_01 01_FirstStepsInProgramming/lab/01.cpp
-        01_FirstStepsInProgramming/exercise/01.cpp)
-add_executable(exe_02 01_FirstStepsInProgramming/lab/02.cpp
-        01_FirstStepsInProgramming/exercise/01.cpp)
-add_executable(exe_03 01_FirstStepsInProgramming/lab/03.cpp
-        01_FirstStepsInProgramming/exercise/01.cpp)
-add_executable(exe_04 01_FirstStepsInProgramming/lab/04.cpp
-        01_FirstStepsInProgramming/exercise/01.cpp)
-add_executable(exe_05 01_FirstStepsInProgramming/lab/05.cpp
-        01_FirstStepsInProgramming/exercise/01.cpp)
-add_executable(exe_06 01_FirstStepsInProgramming/lab/06.cpp
-        01_FirstStepsInProgramming/exercise/01.cpp)
-add_executable(exe_07 01_FirstStepsInProgramming/lab/07.cpp
-        01_FirstStepsInProgramming/exercise/01.cpp)
-add_executable(exe_08 01_FirstStepsInProgramming/lab/08.cpp
-        01_FirstStepsInProgramming/exercise/01.cpp)
-add_executable(exe_09 01_FirstStepsInProgramming/lab/09.cpp
-        01_FirstStepsInProgramming/exercise/01.cpp)
+# Find all .cpp files in the "lab" and "exercise" directories
+file(GLOB LAB_SOURCES "01_FirstStepsInProgramming/lab/*.cpp")
+file(GLOB EXERCISE_SOURCES "01_FirstStepsInProgramming/exercise/*.cpp")
+
+# Create separate executables for each .cpp file in the "lab" directory
+foreach(lab_source ${LAB_SOURCES})
+    get_filename_component(lab_exec_name ${lab_source} NAME_WE)
+    add_executable(${lab_exec_name}_lab ${lab_source})
+endforeach()
+
+# Create separate executables for each .cpp file in the "exercise" directory
+foreach(exercise_source ${EXERCISE_SOURCES})
+    get_filename_component(exercise_exec_name ${exercise_source} NAME_WE)
+    add_executable(${exercise_exec_name}_exercise ${exercise_source})
+endforeach()
