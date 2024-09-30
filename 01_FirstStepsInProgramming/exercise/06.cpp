@@ -8,28 +8,28 @@ int main()
     cin >> nylon >> paint >> paintSeparator >> laborHours;
 
     // Prices
-    double pricePerNylon = 1.5;
-    double pricePerPaint = 14.5; // per liter
-    double pricePerPaintSeparator = 5.0; // per liter
-    double laborRate = 0.3; // percent of total cost per hour
+    constexpr double pricePerNylon = 1.5;
+    constexpr double pricePerPaint = 14.5; // per liter
+    constexpr double pricePerPaintSeparator = 5.0; // per liter
+    constexpr double laborRate = 0.3; // percent of total cost per hour
 
     // Extra materials
-    double extraNylon = 2;
-    double extraPaintPercentage = 0.1; // per liter
-    double bags = 0.4;
+    const double extraNylon = 2;
+    const double extraPaintPercentage = 0.1; // per liter
+    const double bags = 0.4;
 
     // Total cost before labor
-    double nylonCost = (nylon + extraNylon) * pricePerNylon;
-    double paintCost = (paint + extraPaintPercentage * paint) * pricePerPaint;
-    double paintSeparatorCost = paintSeparator * pricePerPaintSeparator;
+    const double nylonCost = (nylon + extraNylon) * pricePerNylon;
+    const double paintCost = (paint + extraPaintPercentage * paint) * pricePerPaint;
+    const double paintSeparatorCost = paintSeparator * pricePerPaintSeparator;
 
-    double totalCostBeforeLabor = nylonCost + paintCost + paintSeparatorCost + bags;
+    const double totalCostBeforeLabor = nylonCost + paintCost + paintSeparatorCost + bags;
 
     // Labor cost
-    double laborCost = (totalCostBeforeLabor * laborRate) * laborHours;
+    const double laborCost = (totalCostBeforeLabor * laborRate) * laborHours;
 
     // Total cost
-    double totalCost = totalCostBeforeLabor + laborCost;
+    const double totalCost = totalCostBeforeLabor + laborCost;
 
     // Output
     cout << totalCost << endl;
