@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     // Password to check against
-    string passwordNeeded = "s3cr3t!P@ssw0rd";
+    const string passwordNeeded = "s3cr3t!P@ssw0rd";
 
     // User input
     string userPassword;
