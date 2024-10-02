@@ -7,8 +7,9 @@ set(CMAKE_CXX_STANDARD 20)
 file(GLOB LAB_SOURCES_01 "01_FirstStepsInProgramming/lab/*.cpp")
 file(GLOB EXERCISE_SOURCES_01 "01_FirstStepsInProgramming/exercise/*.cpp")
 
-# Find all .cpp files in the "lab" directory of 02_ConditionalStatements
+# Find all .cpp files in the "lab" and "exercise" directories of 02_ConditionalStatements
 file(GLOB LAB_SOURCES_02 "02_ConditionalStatements/lab/*.cpp")
+file(GLOB EXERCISE_SOURCES_02 "02_ConditionalStatements/exercise/*.cpp")
 
 # Create separate executables for each .cpp file in the "lab" directory of 01_FirstStepsInProgramming
 foreach(lab_source ${LAB_SOURCES_01})
@@ -26,4 +27,10 @@ endforeach()
 foreach(lab_source_02 ${LAB_SOURCES_02})
     get_filename_component(lab_exec_name_02 ${lab_source_02} NAME_WE)
     add_executable(${lab_exec_name_02}_lab_02 ${lab_source_02})
+endforeach()
+
+# Create separate executables for each .cpp file in the "exercise" directory of 02_ConditionalStatements
+foreach(exercise_source_02 ${EXERCISE_SOURCES_02})
+    get_filename_component(exercise_exec_name_02 ${exercise_source_02} NAME_WE)
+    add_executable(${exercise_exec_name_02}_exercise_02 ${exercise_source_02})
 endforeach()
