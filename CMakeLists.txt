@@ -11,6 +11,9 @@ file(GLOB EXERCISE_SOURCES_01 "01_FirstStepsInProgramming/exercise/*.cpp")
 file(GLOB LAB_SOURCES_02 "02_ConditionalStatements/lab/*.cpp")
 file(GLOB EXERCISE_SOURCES_02 "02_ConditionalStatements/exercise/*.cpp")
 
+# Find all .cpp files in the "lab" directory of 03_MoreComplexConditionalStatements
+file(GLOB LAB_SOURCES_03 "03_MoreComplexConditionalStatements/lab/*.cpp")
+
 # Create separate executables for each .cpp file in the "lab" directory of 01_FirstStepsInProgramming
 foreach(lab_source ${LAB_SOURCES_01})
     get_filename_component(lab_exec_name ${lab_source} NAME_WE)
@@ -33,4 +36,10 @@ endforeach()
 foreach(exercise_source_02 ${EXERCISE_SOURCES_02})
     get_filename_component(exercise_exec_name_02 ${exercise_source_02} NAME_WE)
     add_executable(${exercise_exec_name_02}_exercise_02 ${exercise_source_02})
+endforeach()
+
+# Create separate executables for each .cpp file in the "lab" directory of 03_MoreComplexConditionalStatements
+foreach(lab_source_03 ${LAB_SOURCES_03})
+    get_filename_component(lab_exec_name_03 ${lab_source_03} NAME_WE)
+    add_executable(${lab_exec_name_03}_lab_03 ${lab_source_03})
 endforeach()
